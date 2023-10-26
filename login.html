@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Sign Up - Travel Website</title>
+    <title>Login - Travel Website</title>
     <link rel="stylesheet" href="loginstyles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <!-- Header content (you can reuse the header from your main page) -->
     </header>
 
-    <section class="login-signup">
+    <section class="login">
         <div class="login-form">
             <h2>Login</h2>
             <form action="login.php" method="post">
@@ -25,17 +25,12 @@
             </form>
         </div>
 
-        <div class="signup-form">
-            <h2>Sign Up</h2>
-            <form action="signup.php" method="post">
-                <label for="signup-username">Username:</label>
-                <input type="text" id="signup-username" name="signup-username" required>
-                
-                <label for="signup-password">Password:</label>
-                <input type="password" id="signup-password" name="signup-password" required>
-                
-                <button type="submit">Sign Up</button>
-            </form>
+        <div class="signup-link">
+            <p>Don't have an account?</p>
+            <a href="signup.html">Sign Up</a>
+        </div>
+        <div class="back-to-home">
+            <a href="index.html">Back to Home</a>
         </div>
     </section>
 

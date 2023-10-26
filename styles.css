@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #FF8C00;
     color: white;
     padding: 10px 0;
 }
@@ -26,6 +26,7 @@ nav {
 
 .logo {
     font-size: 24px;
+    font-family: "Copperplate", fantasy; 
 }
 
 nav ul {
@@ -63,7 +64,7 @@ nav a {
 .btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #FF5733;
+    background-color: #FF8C00;
     color: white;
     text-decoration: none;
     border-radius: 5px;

@@ -1,48 +1,43 @@
-/* Style for the login/sign-up forms */
-.login-signup {
-    max-width: 600px;
+/* Styles for the login and sign-up sections */
+.login {
+    max-width: 850px;
     margin: 0 auto;
-    padding: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
-.login-form,
-.signup-form {
-    flex: 1;
+.login-form {
     padding: 20px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-form h2,
-.signup-form h2 {
     text-align: center;
+    margin-top: 70px;
     margin-bottom: 20px;
 }
 
-.login-form form,
-.signup-form form {
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+.login-form form {
     display: flex;
     flex-direction: column;
 }
 
-.login-form label,
-.signup-form label {
+.login-form label {
     margin-bottom: 5px;
 }
 
-.login-form input,
-.signup-form input {
+.login-form input {
     padding: 10px;
     margin-bottom: 15px;
 }
 
-.login-form button,
-.signup-form button {
+.login-form button {
     padding: 15px 30px;
-    background-color: #FF5733;
+    background-color: #FF8C00;
     color: white;
     border: none;
     border-radius: 5px;
@@ -50,7 +45,38 @@
     cursor: pointer;
 }
 
-/* Add some spacing between the forms */
-.login-form {
-    margin-right: 10px;
+.signup-link {
+    text-align: center;
+}
+
+.signup-link p {
+    margin-bottom: 10px;
+}
+
+.signup-link a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.back-to-home {
+    text-align: center;
+}
+
+.back-to-home p {
+    margin-bottom: 20px;
+}
+
+.back-to-home a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.back-to-home a:hover {
+    text-decoration: underline;
 }
