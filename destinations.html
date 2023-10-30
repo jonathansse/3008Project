@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Destinations Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3008 PROJECT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SIZZLE</div>
+            <ul>
+                <li><a href="index.html#">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="itinerary.html">Itinerary</a></li>               
+                <li><a href="login.html#">Login/SignUp</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <h1 class="mtl">Things to do MONTREAL</h1>
+    <div class="spacer"></div>
+    <div class="centered-search-bar">
+        <div class="search-box">
+            <input type="text" placeholder="Current Location?">
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Budget in $CAD">
+        </div>
+        <button class="search-button">Search</button>
+    </div>
+
+
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="hik8x8.jpg" alt="Image 1">
+        </div>
+
+        <div class="mySlides">
+            <img src="brk8x8.jpg" alt="Image 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="tnt8x8.jpg" alt="Image 3">
+        </div>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="corn8x8.jpg" alt="Image 1">
+        </div>
+
+        <div class="mySlides">
+            <img src="sal8x8.jpg" alt="Image 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="brk8x8.jpg" alt="Image 3">
+        </div>
+    </div>
+
+    <div class="axr">
+        <div class="activity">
+            Activity 1
+            <button class="add-activity">+</button>
+        </div>
+        <div class="activity">
+            Activity 2
+            <button class="add-activity">+</button>
+        </div>
+        <div class="activity">
+            Activity 3
+            <button class="add-activity">+</button>
+        </div>
+    </div>
+    <div class="axr">    
+        <div class="restaurant">
+            Restaurant 1
+            <button class="add-restaurant">+</button>
+        </div>
+        <div class="restaurant">
+            Restaurant 2
+            <button class="add-restaurant">+</button>
+        </div>
+        <div class="restaurant">
+            Restaurant 3
+            <button class="add-restaurant">+</button>
+        </div>
+    </div>
+
+    <script>
+        const addButton = document.querySelectorAll('.add-activity, .add-restaurant');
+    
+        addButton.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const category = event.target.classList.contains('add-activity') ? 'activity' : 'restaurant';
+                const item = event.target.nextElementSibling.textContent;
+    
+                fetch('/add-item', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ category, item }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Item added:', data);
+                });
+            });
+        });
+
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>    
+
+</body>
+</html>
