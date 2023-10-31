@@ -386,9 +386,46 @@ button {
         opacity: 0;
     }
 }
-With these changes, the corrected CSS animation will cycle through all the images in the slideshow. The @keyframes animation gradually changes the opacity of each image, creating the fading effect.
 
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
 
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
 
+td {
+    border: 1px solid #ddd;
+}
 
+th {
+    background-color: #fbb561;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.remove-item {
+    width: 3%;
+}
+
+.remove-item-img {
+    height: 15px;
+    vertical-align:bottom;
+}
+
+.item-img {
+    width: 140px;
+}
 
