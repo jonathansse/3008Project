@@ -113,3 +113,51 @@ nav a {
 .back-to-home a:hover {
     text-decoration: underline;
 }
+
+
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-container {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-container h2 {
+    margin: 10px 0 20px 0;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input {
+    width: 85%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group button {
+    background: #0074D9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}

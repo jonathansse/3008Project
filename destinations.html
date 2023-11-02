@@ -1,134 +1,169 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Destinations Page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3008 PROJECT</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="logo">SIZZLE</div>
             <ul>
-                <li><a href="index.html#">Home</a></li>
+                <li><a href="loggedIn.html#">Home</a></li>
                 <li><a href="destinations.html">Destinations</a></li>
                 <li><a href="itinerary.html">Itinerary</a></li>               
-                <li><a href="login.html#">Login/SignUp</a></li>
+                <li><a href="index.html#">Log Out</a></li>
             </ul>
         </nav>
 
     </header>
 
     <h1 class="mtl">Things to do MONTREAL</h1>
-    <div class="spacer"></div>
-    <div class="centered-search-bar">
-        <div class="search-box">
-            <input type="text" placeholder="Current Location?">
-        </div>
-        <div class="search-box">
-            <input type="text" placeholder="Budget in $CAD">
-        </div>
-        <button class="search-button">Search</button>
-    </div>
 
 
-    <div class="slideshow-container">
-        <div class="mySlides">
-            <img src="hik8x8.jpg" alt="Image 1">
-        </div>
 
-        <div class="mySlides">
-            <img src="brk8x8.jpg" alt="Image 2">
-        </div>
 
-        <div class="mySlides">
-            <img src="tnt8x8.jpg" alt="Image 3">
-        </div>
-    </div>
-    <div class="slideshow-container">
-        <div class="mySlides">
-            <img src="corn8x8.jpg" alt="Image 1">
-        </div>
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="city.jpg" style="width: 100%;" style="height: 40px;">
+        <img class="mySlides" src="eur.jpg" style="width: 100%;" style="height: 40px;">
+        <img class="mySlides" src="lar.jpg" style="width: 100%;" style="height: 40px;">
 
-        <div class="mySlides">
-            <img src="sal8x8.jpg" alt="Image 2">
-        </div>
-
-        <div class="mySlides">
-            <img src="brk8x8.jpg" alt="Image 3">
-        </div>
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
     </div>
 
     <div class="axr">
-        <div class="activity">
-            Activity 1
-            <button class="add-activity">+</button>
+        <div class="activity" id="activities">
+            <a href="https://montreal.ca/lieux/parc-du-mont-royal" id="name">Parc Mont-Royal·4.5·$</a>
+            <p id="description">Family Friendly</p>
+            <p id="address">2000 Chemin Remembrance</p>
+            <p id="price">$23</p>
+            <button class="add-activity" id = "5" name="Parc Mont-Royal" description="Nature" address="2000 Chemin Remembrance" price="15">+</button>
         </div>
         <div class="activity">
-            Activity 2
-            <button class="add-activity">+</button>
+            <a href="https://soslabyrinthe.com/" id="name">SOS Labrynthe·4.2·$$</a>
+            <p id="description">Family Friendly</p>
+            <p id="address">Clock Tower Pier Old Port of Montreal</p>
+            <p id="price">$23</p>
+            <button class="add-activity" id = "6" name="SOS Labrynthe" description="Family Friendly" address="54 Saint-Antoine Street West" price="45">+</button>
         </div>
         <div class="activity">
-            Activity 3
-            <button class="add-activity">+</button>
+            <a href="https://www.mtl.org/en/what-to-do/festivals-and-events/pirates-or-privateers#:~:text=Presented%20in%20an%20immersive%20environment,your%20time%20at%20the%20Museum!" id="name">Pirates or Privateers?·4.4·$$$</a>
+            <p id="description">Family Friendly</p>
+            <p id="address">Pointe-a-Calliere, Montreal Archaeology and History Complex</p>
+            <p id="price">$26</p>
+            <button class="add-activity" id = "7" name="La Ronde" description="Free Parking" address="Ile Sainte-Helene" price="70">+</button>
         </div>
+        <div class="activity">
+            <a href="https://casinos.lotoquebec.com/en/montreal/home" id="name">Casino de Montreal·4.4·$$$</a>
+            <p id="description">Outdoors</p>
+            <p id="address">1 Ave du Casino, Montreal</p>
+            <p id="price">$150</p>
+            <button class="add-activity" id = "8" name="La Ronde" description="Free Parking" address="Ile Sainte-Helene" price="70">+</button>
+        </div>
+        <div class="activity">
+            <a href="https://elevationtrampoline.com/en/activites/ninja-warrior/" id="name">Ninja Warrior et Parkour·4.4·$$$</a>
+            <p id="description">Outdoors</p>
+            <p id="address">2350 Rue Dickson Local 340</p>
+            <p id="price">$30</p>
+            <button class="add-activity" id = "9" name="La Ronde" description="Free Parking" address="Ile Sainte-Helene" price="70">+</button>
+        </div>
+        
     </div>
-    <div class="axr">    
+    <div class="axr" id="restaurants">    
         <div class="restaurant">
-            Restaurant 1
-            <button class="add-restaurant">+</button>
+            <a href="https://www.arepera.ca/" id="name">Arepera·4.4·$</a>
+            <p id="description">Venezuelan</p>
+            <p id="address">73 Rue Prince-Arthur E</p>
+            <p id="price">$20</p>
+            <button class="add-activity" id = "0" name="Arepera" description="Venezuelan" address="73 Rue Prince-Arthur E" price="20">+</button>
         </div>
         <div class="restaurant">
-            Restaurant 2
-            <button class="add-restaurant">+</button>
+            <a href="https://www.ubereats.com/ca/store/dobe-and-andy/W9vQVAgpQjSq7KTPoOgWZg" id="name">Restaurant Dobe & Andy·4.4·$</a>
+            <p id="description">Chinese</p>
+            <p id="address">1071 Rue  Saint-Urbain R-12</p>
+            <p id="price">$18</p>
+            <button class="add-activity" id = "1" name="Arepera" description="Venezuelan" address="73 Rue Prince-Arthur E" price="20">+</button>
         </div>
         <div class="restaurant">
-            Restaurant 3
-            <button class="add-restaurant">+</button>
+            <a href="https://kazumontreal.com/" id="name">Kazu·4.6·$$</a>
+            <p id="description">Japanese</p>
+            <p id="address">1844 Saint-Catherine St W</p>
+            <p id="price">$55</p>
+            <button class="add-activity" id = "2" name="Kazu" description="Japanese" address="1844 Saint-Catherine St W" price="55">+</button>
+        </div>
+        <div class="restaurant">
+            <a href="https://www.venicemtl.com/" id="name">Venice Mtl Vieux-Montreal·4.6·$$</a>
+            <p id="description">Californian</p>
+            <p id="address">440 Saint Francois Xavier St</p>
+            <p id="price">$48</p>
+            <button class="add-activity" id = "3" name="Kazu" description="Japanese" address="1844 Saint-Catherine St W" price="55">+</button>
+        </div>
+        <div class="restaurant">
+            <a href="https://restaurantlexpress.com/en/" id="name">L'Express·4.5·$$$</a>
+            <p id="description">French</p>
+            <p id="address">3927 Saint Denis St</p>
+            <p id="price">$80</p>
+            <button class="add-activity" id = 4" name="L'Express" description="French" address="3927 Saint Denis St price="80">+</button>
         </div>
     </div>
 
     <script>
-        const addButton = document.querySelectorAll('.add-activity, .add-restaurant');
-    
-        addButton.forEach(button => {
-            button.addEventListener('click', (event) => {
-                const category = event.target.classList.contains('add-activity') ? 'activity' : 'restaurant';
-                const item = event.target.nextElementSibling.textContent;
-    
-                fetch('/add-item', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ category, item }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Item added:', data);
-                });
-            });
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length} ;
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+            x[slideIndex-1].style.display = "block";
+        }
+
+        document.querySelector('.add-activity').addEventListener('click', function() {
+            // Get the id attribute from the clicked button
+            const id = this.getAttribute('id');
+
+            // Create a new XMLHttpRequest (AJAX) object
+            const xhr = new XMLHttpRequest();
+
+            // Define the request method, URL, and set it to asynchronous
+            xhr.open('POST', '/server.js', true);
+
+            // Set the request headers (if needed)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            // Define the data to send to the server (in this case, the id)
+            const data = 'id=' + encodeURIComponent(id);
+
+            // Set up the callback function to handle the response from the server
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Request was successful, handle the response from the server
+                    console.log('Response from server:', xhr.responseText);
+                } else {
+                    // Handle errors or non-200 status codes
+                    console.error('Request failed with status:', xhr.status);
+                }
+            };
+
+            // Send the data to the server
+            xhr.send(data);
         });
 
-        let slideIndex = 0;
-        showSlides();
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
-        }
+
     </script>    
-
 </body>
 </html>

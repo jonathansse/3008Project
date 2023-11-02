@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3008 PROJECT</title>
+    <link rel="stylesheet" href="destyles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">SIZZLE</div>
+
+            <form class="search-form" action="destinations.html" method="get">
+                <input type="text" name="search" placeholder="Explore The World!">
+                <button type="submit">Search</button>
+            </form>
+
+            <ul>
+                <li><a href="index.html#">Home</a></li>
+                <li><a href="dest.html">Destinations</a></li>
+                <li><a href="itinerary.html">Itinerary</a></li>               
+                <li><a href="login.html#">Login/SignUp</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <div class="image-container">
+        <img src="view.jpg" alt="Sunset skyline">
+        <div class="text-overlay">
+            <p class="text-with-shadow">Plan Your Dream Vacation</p>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="bigdesign">
+        <table>
+            <tr>
+                <td>
+                    <div class="w3-content w3-display-container" style="width: 100%;">
+                        <img class="mySlides" src="ott8x8.jpg" style="width: 100%;" style="height: 40px;" style="text-align: center;" style="float: left;">
+                        <img class="mySlides" src="ton8x8.jpg" style="width: 100%;" style="height: 40px;" style="text-align: center;" style="float: left;"> 
+                        <div class="spacer"></div>
+                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+                </td>
+                <td>
+                    <div class="textdest">
+                        <h1 style='color:orange;'>Travel in Style for Less</h1>
+                        <h3>Are you ready to embark on unforgettable journeys filled
+                        thrilling adventures, delectable dining experiences, and</h3>
+                        <h3>worry-free budget management? Look no further than Sizzle,
+                        your one-stop travel website thats designed to make</h3>
+                        <h3>your trips sizzle with excitement and flavour
+                        without burning a hole in your pocket.</h3>
+                        <h3>Are you ready to embark on unforgettable journeys filled
+                        thrilling adventures, delectable dining experiences, and</h3>
+                        <h3>worry-free budget management? Look no further than Sizzle,
+                        your one-stop travel website thats designed to make</h3>
+                        <h3>your trips sizzle with excitement and flavour
+                        without burning a hole in your pocket.</h3>
+                        <h3>Are you ready to embark on unforgettable journeys filled
+                        thrilling adventures, delectable dining experiences, and</h3>
+                        <h3>worry-free budget management? Look no further than Sizzle,
+                        your one-stop travel website thats designed to make</h3>
+                        <h3>your trips sizzle with excitement and flavour
+                        without burning a hole in your pocket.</h3>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    
+    </div>
+
+    <script>
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }
+
+    </script>   
+    
+
+</body>
+</html>

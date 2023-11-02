@@ -57,6 +57,7 @@ input {
 
 .spacerhome {
     border: white;
+    height: 300px;
 }
 
 header {
@@ -135,11 +136,19 @@ footer {
 }
 
 .float-child {
-    width: 100%;
+    display: inline block;
+    width: 31%;
     float: left;
     padding: 20px;
     text-align: left;
     border-radius: 10%;
+}  
+
+.float-childl {
+    display: inline block;
+    width: 100%;
+    float: center;
+    text-align: center;
 }  
 
 /* CSS for the image and text overlay */
@@ -264,18 +273,20 @@ button {
 }
 
 .trycontain {
-    display: inline-block;
+    display: flex;
+    text-align: center;
+    margin-left: 210px;
 }
 
 .boxchild {
     display: inline-block;
-    width: 315px;
-    height: 400px;
+    width: 320px;
+    height: 430px;
     background-color: #FF8C00;
     color: white;
     margin: 10px;
     text-align: center;
-    line-height: 100px;
+    line-height: 30px;
 }
 
 .activity,
@@ -335,60 +346,16 @@ button {
 
 .axr {
     display: inline-block;
-    width: 40%;
+    width: 43%;
 }
 
 .mtl {
-    color: black;
+    color: #333;   /* Change the text color */
+    text-align: center; /* Center the text */
+    font-weight: italic;  /* Make the text bold */
 }
 
-.slideshow-container {
-    display: inline-block;
-    width: 40%;
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-    overflow: hidden;
+.hspace{
+    margin-right: 25px;
 }
-
-/* Style for the slideshow images */
-.mySlides {
-    display: none;
-    width: 100%;
-}
-
-.mySlides img {
-    width: 100%;
-    height: auto;
-}
-
-/* CSS Animation for the slideshow */
-.mySlides:first-child {
-    display: block;
-    animation: fade 3s infinite;
-}
-
-.mySlides {
-    animation: fade 3s infinite;
-}
-
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-With these changes, the corrected CSS animation will cycle through all the images in the slideshow. The @keyframes animation gradually changes the opacity of each image, creating the fading effect.
-
-
-
-
 

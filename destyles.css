@@ -1,0 +1,370 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: ##89CFF0;
+}
+
+.search-bar {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.centered-search-bar {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 50%; 
+    margin: 0 auto; 
+}
+
+.search-box {
+    flex: 1;
+    padding: 7px;
+}
+
+input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    outline: none;
+}
+
+.search-button {
+    background-color: #ff385c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.spacer {
+    height: 30px; 
+}
+
+.spacerhome {
+    border: white;
+    height: 300px;
+}
+
+header {
+    background-color: #FF8C00;
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-family: "Copperplate", fantasy; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #FF8C00;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.destinations {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.destination-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.destination-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child {
+    display: inline block;
+    width: 31%;
+    float: left;
+    padding: 20px;
+    text-align: left;
+    border-radius: 10%;
+}  
+
+.float-childl {
+    display: inline block;
+    width: 100%;
+    float: center;
+    text-align: center;
+}  
+
+/* CSS for the image and text overlay */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity */
+}
+
+.text-overlay p {
+    color: white;
+    font-size: 48px;
+    text-align: left;
+    padding: 10px;
+}
+
+.text-with-shadow {
+    font-size: 56px;
+    color: white;
+    text-shadow: 2px 2px 4px black; /* Adjust the values for the shadow effect */
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4%;
+    width: 650px;
+}
+
+.search-form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: white;
+    padding: 10px;
+}
+
+h2 {
+    font-size: medium;
+}
+
+h3 {
+    font-size: medium;
+}
+
+label, input, button {
+    margin: 12px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#choices {
+    display: none;
+    margin: 20px;
+}
+
+#result {
+    display: none;
+    margin: 20px;
+}
+
+#budget{
+    width: 200px;
+    height: 25px;
+}
+
+#budget::before{
+    content: "$";
+}
+
+.contain {
+    text-align: center;
+}
+
+.box {
+    display: inline-block;
+    width: 315px;
+    height: 100px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.trycontain {
+    display: flex;
+    text-align: center;
+    margin-left: 35px;
+}
+
+.boxchild {
+    display: inline-block;
+    width: 320px;
+    height: 430px;
+    background-color: #FF8C00;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.activity,
+.restaurant {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    background-color: #f9f9f9;
+}
+
+.activity button, .restaurant button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.activity button:hover, .restaurant button:hover {
+    background-color: #1e6bb8;
+}
+
+.activity, .restaurant {
+    transition: transform 0.3s;
+}
+
+.activity:hover, .restaurant:hover {
+    transform: scale(1.05);
+}
+
+/* Optional: Add styles for the selected items list */
+#selected-items {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Optional: Style for the "Add Selected Items" button */
+#add-selected-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+#add-selected-button:hover {
+    background-color: #1e6bb8;
+}
+
+.axr {
+    display: inline-block;
+    width: 43%;
+}
+
+.mtl {
+    color: #333;   /* Change the text color */
+    text-align: center; /* Center the text */
+    font-weight: italic;  /* Make the text bold */
+}
+
+.hspace{
+    margin-right: 25px;
+}
+
+.textdest {
+    width: 85%;
+    text-align: left;
+    float: right;
+}
+
+.bigdesign {
+    margin-left: 35px;
+}
