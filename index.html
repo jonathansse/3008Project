@@ -11,14 +11,14 @@
         <nav>
             <div class="logo">SIZZLE</div>
 
-            <form class="search-form" action="#" method="get">
+            <form class="search-form" action="destinations.html" method="get">
                 <input type="text" name="search" placeholder="Explore The World!">
                 <button type="submit">Search</button>
             </form>
 
             <ul>
                 <li><a href="index.html#">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="dest.html">Destinations</a></li>
                 <li><a href="itinerary.html">Itinerary</a></li>               
                 <li><a href="login.html#">Login/SignUp</a></li>
             </ul>
@@ -50,7 +50,38 @@
     </div>
     <div class="spacer"></div>
 
-    
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="city.jpg" style="width: 100%;" style="height: 40px;">
+        <img class="mySlides" src="eur.jpg" style="width: 100%;" style="height: 40px;">
+        <img class="mySlides" src="lar.jpg" style="width: 100%;" style="height: 40px;">
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <script>
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length} ;
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+            x[slideIndex-1].style.display = "block";
+        }
+
+
+
+    </script>  
 
 </body>
 </html>

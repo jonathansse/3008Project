@@ -353,7 +353,6 @@ button {
     color: #333;   /* Change the text color */
     text-align: center; /* Center the text */
     font-weight: italic;  /* Make the text bold */
-    font-family: cursive;
 }
 
 .hspace{

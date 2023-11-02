@@ -353,31 +353,18 @@ button {
     color: #333;   /* Change the text color */
     text-align: center; /* Center the text */
     font-weight: italic;  /* Make the text bold */
-    font-family: cursive;
 }
 
 .hspace{
     margin-right: 25px;
 }
 
-/* Style the map container */
-/* Style the header and content sections */
-
-
-.content {
-    padding: 20px;
+.textdest {
+    width: 85%;
+    text-align: left;
+    float: right;
 }
 
-/* Style the map container */
-.map-container {
-    width: 80%; /* Set the desired width */
-    height: 400px;
-    max-width: 600px; /* Set the desired height */
-    border: 1px solid #ccc; /* Optional: Add a border for visualization */
-    position: relative;
-    margin: 0 auto;
-    padding: 20px;
-    top: 0; /* Reset top position */
+.bigdesign {
+    margin-left: 35px;
 }
-
-
