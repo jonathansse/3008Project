@@ -36,6 +36,7 @@
     </div>
 
     <div class="axr">
+        <h2 style="text-align:center;">Activities</h2>
         <div class="activity" id="activities">
             <a href="https://montreal.ca/lieux/parc-du-mont-royal" id="name">Parc Mont-Royal·4.5·$</a>
             <p id="description">Family Friendly</p>
@@ -73,7 +74,8 @@
         </div>
         
     </div>
-    <div class="axr" id="restaurants">    
+    <div class="axr" id="restaurants">
+        <h2 style="text-align:center;">Restaurants</h2>
         <div class="restaurant">
             <a href="https://www.arepera.ca/" id="name">Arepera·4.4·$</a>
             <p id="description">Venezuelan</p>
@@ -131,38 +133,32 @@
             x[slideIndex-1].style.display = "block";
         }
 
-        document.querySelector('.add-activity').addEventListener('click', function() {
-            // Get the id attribute from the clicked button
-            const id = this.getAttribute('id');
+        document.addEventListener('DOMContentLoaded', () => {
+            const addButtons = document.querySelectorAll('.add-activity');
 
-            // Create a new XMLHttpRequest (AJAX) object
-            const xhr = new XMLHttpRequest();
-
-            // Define the request method, URL, and set it to asynchronous
-            xhr.open('POST', '/server.js', true);
-
-            // Set the request headers (if needed)
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-            // Define the data to send to the server (in this case, the id)
-            const data = 'id=' + encodeURIComponent(id);
-
-            // Set up the callback function to handle the response from the server
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    // Request was successful, handle the response from the server
-                    console.log('Response from server:', xhr.responseText);
-                } else {
-                    // Handle errors or non-200 status codes
-                    console.error('Request failed with status:', xhr.status);
-                }
-            };
-
-            // Send the data to the server
-            xhr.send(data);
+            addButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    sendActivityRequest(this.getAttribute('id'));
+                });
+            });
         });
 
-
+        function sendActivityRequest(id) {
+            fetch('http://localhost:3000/addDestanation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: id })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response from server:', data);
+            })
+            .catch(error => {
+                console.error('Request failed:', error);
+            });
+        }
 
     </script>    
 </body>
