@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 
 
@@ -44,7 +45,7 @@ let Itinerary = {
 				description: "French",
 				address: "3927 Saint Denis St",
 				price: 75,
-				image: "restaurants/l'Express.jpg"
+				image: "restaurants/express.jpg"
 			}
 		}
 	},
@@ -92,15 +93,16 @@ let Itinerary = {
 	}	
 }
 
-let order = {};
+let order = {1:4};
 
 let budget = 0, subtotal = 0, total = 0, tax = 0;
 
 app.use(express.static('public'));
 app.use(express.json());
+app.use(cors());
 
 
-
+app.get("/", home);
 app.get('/orders', (req, res) => {
     res.status(200).json([Itinerary, order, ]);
 });
@@ -116,23 +118,37 @@ app.post("/orders", (req, res) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
 let receivedId; // Variable to store the received id
 
 // Define a route to handle the POST request
-app.post('/server.js', (req, res) => {
-    // Access the data sent from the HTML JavaScript
-    receivedId = req.body.id; // Assuming the data sent was named 'id'
-
-    // Respond with a confirmation or any other response
-    res.json({ message: 'Data received successfully', receivedId: receivedId });
-
+app.post('/addDestanation', (req, res) => {
+    receivedId = req.body.id; // Access the data sent from the client-side
+    console.log("Received ID:", receivedId);
+    addItem(parseInt(receivedId));
+    res.status(200).json({ message: 'Data received successfully', receivedId: receivedId });
 });
-let intId = parseInt(receivedId)
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
 
 
+
+function home(req, res) {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/html");
+    res.send("index.html#");
+}
+
+function addItem(id){
+    if(order.hasOwnProperty(id)){
+        order[id] += 1;
+    }else{
+        order[id] = 1;
+    }
+} 
+
+
+app.listen(3000, () => {
+    console.log(`Server is running on http://localhost:3000`);
+});
 
 
 

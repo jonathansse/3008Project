@@ -54,7 +54,7 @@ function viewItinerary(order){
 		//Retrieve the item from the menu data using helper function
 		//Then update the subtotal and result 
 		let item = {}
-		if(id < 22) {
+		if(id < 5) {
 			item = getRestaurantById(id);
 		}else {
 			item = getActivityById(id);
