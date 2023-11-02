@@ -11,14 +11,14 @@
         <nav>
             <div class="logo">SIZZLE</div>
 
-            <form class="search-form" action="#" method="get">
+            <form class="search-form" action="destinations.html" method="get">
                 <input type="text" name="search" placeholder="Explore The World!">
                 <button type="submit">Search</button>
             </form>
 
             <ul>
                 <li><a href="index.html#">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="dest.html">Destinations</a></li>
                 <li><a href="itinerary.html">Itinerary</a></li>               
                 <li><a href="login.html#">Login/SignUp</a></li>
             </ul>
@@ -42,34 +42,46 @@
             <h1 style='color:orange;'>Expertly Planned Itineraries</h1>
             <p>Our team of travel experts will help you plan your dream vacation down to the last detail. We are licensed and insured, so you can rest assured that your travels are in safe and capable hands</p>
         </div>
-        <!--<div class="float-child">
+        <div class="float-child">
           <h1 style='color:orange;'>Interactive Budget Manager</h1>
           <p>Sizzle provides both an interactive itinerary and allows the user to set a budget for the travel plans whose value constantly updates as more tasks or activities are planned by the user in the city.</p>
         </div>
-        -->
+        
     </div>
     <div class="spacer"></div>
-    <section class="destinations">
-        <h2>Popular Destinations</h2>
-        <div class="destination-card">
-            <img src="paris.jpg" alt="Paris">
-            <h3>Paris</h3>
-            <p>Explore the City of Love</p>
-        </div>
-        <div class="destination-card">
-            <img src="nyc.jpg" alt="New York City">
-            <h3>New York City</h3>
-            <p>Experience the Big Apple</p>
-        </div>
-        <div class="destination-card">
-            <img src="tokyo.jpg" alt="Tokyo">
-            <h3>Tokyo</h3>
-            <p>Discover the Land of the Rising Sun</p>
-        </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2023 Travel Explorer</p>
-    </footer>
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="city.jpg" style="width: 100%;" style="height: 40px;">
+        <img class="mySlides" src="eur.jpg" style="width: 100%;" style="height: 40px;">
+        <img class="mySlides" src="lar.jpg" style="width: 100%;" style="height: 40px;">
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <script>
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length} ;
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+            x[slideIndex-1].style.display = "block";
+        }
+
+
+
+    </script>  
+
 </body>
 </html>

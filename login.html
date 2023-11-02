@@ -19,31 +19,83 @@
         </nav>
     </header>
 
-    <section class="login">
-        <div class="login-form">
+    <div class="container">
+        <div class="form-container">
             <h2>Login</h2>
-            <form action="login.php" method="post">
-                <label for="login-username">Username:</label>
-                <input type="text" id="login-username" name="login-username" required>
-                
-                <label for="login-password">Password:</label>
-                <input type="password" id="login-password" name="login-password" required>
-                
-                <a href="loggedIn.html">Login</a>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p class="error" id="login-error"></p>
             </form>
         </div>
-
-        <div class="signup-link">
-            <p>Don't have an account?</p>
-            <a href="signup.html">Sign Up</a>
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="new-username">Username:</label>
+                    <input type="text" id="new-username" name="new-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Password:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p class="error" id="signup-error"></p>
+            </form>
         </div>
-        <div class="back-to-home">
-            <a href="index.html">Back to Home</a>
-        </div>
-    </section>
+    </div>
 
-    <footer>
-        <!-- Footer content (you can reuse the footer from your main page) -->
-    </footer>
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const loginError = document.getElementById('login-error');
+        const signupForm = document.getElementById('signup-form');
+        const signupError = document.getElementById('signup-error');
+
+        function redirectToPage() {
+            // Specify the target HTML page
+            const targetPage = 'loggedIn.html'; // Replace with your desired page
+
+            // Redirect to the target page
+            window.location.href = targetPage;
+        }
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'jonathan' && password === 'jonathan') {
+                // Successful login, redirect or perform further actions
+                loginError.textContent = '';
+                alert('Login successful');
+                redirectToPage();
+            } else {
+                loginError.textContent = 'Invalid username or password';
+            }
+        });
+
+        signupForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const newUsername = document.getElementById('new-username').value;
+            const newPassword = document.getElementById('new-password').value;
+
+            if (newUsername === 'jonathan' && newPassword === 'jonathan') {
+                // Successful sign-up, redirect or perform further actions
+                signupError.textContent = '';
+                alert('Sign-up successful');
+                newUsername.value = "";
+                newPassword.value = "";
+            } else {
+                signupError.textContent = 'Invalid username or password';
+            }
+        });
+    </script>
 </body>
 </html>
