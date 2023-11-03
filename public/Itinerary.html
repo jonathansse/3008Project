@@ -18,7 +18,15 @@
                 </ul>
             </nav>
         </header>
-		<br><br>
+		<br>
+        <form>
+            <div class="budget-bar" style="display: inline-block;">
+                <label style="font-weight: bold">What's the Budget your looking at:</label>
+                <input type="text" style=" border: 2px black; border-radius: 4px;" id="budgetInput" placeholder="9000" required>
+                <button onclick="submitBudget(event)" type="submit">submit Budget</button>
+            </div>
+        </form>
+        <br>
 		<div id="main">
             <table id="main-table">
                 <thead>
