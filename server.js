@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 
@@ -93,7 +94,7 @@ let Itinerary = {
 	}	
 }
 
-let order = {1:4};
+let order = {};
 
 let budget = 0, subtotal = 0, total = 0, tax = 0;
 
@@ -102,16 +103,17 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get("/", home);
+//app.get("/", home);
 app.get('/orders', (req, res) => {
-    res.status(200).json([Itinerary, order, ]);
+    res.status(200).json([Itinerary, order, budget]);
 });
 
 // saves the user's order to order collection.
 app.post("/orders", (req, res) => {
     subtotal = req.body.subtotal, total = req.body.total,
-    tax = req.body.tax, order = req.body.order;
+    tax = req.body.tax, order = req.body.order, budget = req.body.budget;
 	console.log(order);
+	console.log(budget);
 	res.status(200).send();
 });
 
@@ -131,11 +133,9 @@ app.post('/addDestanation', (req, res) => {
 
 
 
-function home(req, res) {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/html");
-    res.send("index.html#");
-}
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 function addItem(id){
     if(order.hasOwnProperty(id)){
@@ -149,8 +149,3 @@ function addItem(id){
 app.listen(3000, () => {
     console.log(`Server is running on http://localhost:3000`);
 });
-
-
-
-
-

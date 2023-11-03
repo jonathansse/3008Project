@@ -196,7 +196,7 @@ footer {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4%;
-    width: 650px;
+    width: 500px;
 }
 
 .search-form button {
@@ -275,7 +275,7 @@ button {
 .trycontain {
     display: flex;
     text-align: center;
-    margin-left: 210px;
+    margin-left: 445px;
 }
 
 .boxchild {
@@ -390,9 +390,9 @@ th, td {
     text-align: left;
 }
 
-td {
+/* td {
     border: 1px solid #ddd;
-}
+} */
 
 th {
     background-color: #fbb561;
@@ -420,3 +420,6 @@ tr:hover {
     width: 140px;
 }
 
+.budget-bar {
+
+}

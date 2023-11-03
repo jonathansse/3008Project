@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3008 PROJECT</title>
+    <title>Destinations</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -112,54 +112,6 @@
             <button class="add-activity" id = 4" name="L'Express" description="French" address="3927 Saint Denis St price="80">+</button>
         </div>
     </div>
-
-    <script>
-
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-        showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length} ;
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-            x[slideIndex-1].style.display = "block";
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const addButtons = document.querySelectorAll('.add-activity');
-
-            addButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    sendActivityRequest(this.getAttribute('id'));
-                });
-            });
-        });
-
-        function sendActivityRequest(id) {
-            fetch('http://localhost:3000/addDestanation', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ id: id })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Response from server:', data);
-            })
-            .catch(error => {
-                console.error('Request failed:', error);
-            });
-        }
-
-    </script>    
+    <script src="destinations.js"></script>
 </body>
 </html>

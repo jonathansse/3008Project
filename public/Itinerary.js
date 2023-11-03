@@ -5,6 +5,7 @@
 let info = {};
 let Itinerary = {};
 let order = {};
+let budget = 0;
 
 function init() {
 	var xhr = new XMLHttpRequest();
@@ -14,8 +15,10 @@ function init() {
 			var response = JSON.parse(xhr.responseText);
 			Itinerary = response[0];
 			order = response[1];
+			if (budget == 0)  
+				budget = response[2];
 			console.log(Itinerary, order);
-			updateItinerary(); 
+			updateItinerary(false); 
 		}
 	};
 	xhr.send();
@@ -85,18 +88,33 @@ function itinerarySummaryCost(subtotal, isSubmitted){
 	result += `Tax: \$${(subtotal*0.1).toFixed(2)}<br>`;
 	let total = subtotal + (subtotal*0.1);
 	result += `Total: \$${total.toFixed(2)}<br>`;
-	if(!isSubmitted){
+	if(!isSubmitted && (budget - total) >= 0 && budget != 0){
 		result += `<button type="button" id="submit" onclick="submitItinerary()">Submit Itinerary</button>`;
+	}
+	if ((budget - total) < 0 && budget != 0) {
+		result += `Please remove some of your itineraries, you're over your budget!`;
+	}
+	if (budget == 0 ) {
+		result += `Please submit you're budget!`;
 	}
 	info = {};
 	info.subtotal = subtotal;
 	info.total = total;
 	info.tax = subtotal * 0.1;
+	info.budget = budget;
 	info.order = order;
 
 	document.getElementById("summaryCost").innerHTML = result;
 }
 
+function submitBudget(event){
+    event.preventDefault();  
+    budget = parseInt(document.getElementById('budgetInput').value);
+	document.getElementById('budgetInput').placeholder = budget;
+    console.log(budget);
+    init();
+}
+	
 //Simulate submitting the itinerary
 function submitItinerary(){
 	req = new XMLHttpRequest();
